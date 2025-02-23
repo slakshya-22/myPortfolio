@@ -20,3 +20,7 @@ function App() {
 }
 
 export default App;
+
+
+
+// fixed -z-10 min-h-screen w-full

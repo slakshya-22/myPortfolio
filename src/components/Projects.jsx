@@ -1,31 +1,32 @@
 import image1 from "/public/1.png";
 import image2 from "/public/2.png";
 import image3 from "/public/3.png";
-import image4 from "/public/4.png";
-import image5 from "/public/5.png";
 import { motion } from "framer-motion";
 
 const projectsData = [
   {
     image: image1,
-    title: "Habit Tracker",
+    title: "Resume Builder",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, doloremque. Laboriosam sapiente ipsam earum labore expedita quod dignissimos tempora laborum autem, fugiat eos perferendis non odio vero voluptatibus dolorem illo? Possimus.",
-    technologies: ["HTML, CSS"],
+    technologies: ["HTML", "CSS", "JavaScript", "Firebase"],
+    link: "https://slakshya-22.github.io/M4-GEEKATHON/src/signup-login/register.html",
   },
   {
     image: image2,
-    title: "Todo App",
+    title: "Cadbury Clone",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, doloremque. Laboriosam sapiente ipsam earum labore expedita quod dignissimos tempora laborum autem, fugiat eos perferendis non odio vero voluptatibus dolorem illo? Possimus.",
-    technologies: ["HTML, CSS", "JavaScript"],
+    technologies: ["HTML", "CSS", "JavaScript"],
+    link: "https://buriburi-nik.github.io/cadbury-clone/nikhil/HomePage/index.html",
   },
   {
     image: image3,
-    title: "Social Media App",
+    title: "Chat App Clone",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, doloremque. Laboriosam sapiente ipsam earum labore expedita quod dignissimos tempora laborum autem, fugiat eos perferendis non odio vero voluptatibus dolorem illo? Possimus.",
-    technologies: ["HTML, CSS", "JavaScript", "TailwindCSS"],
+    technologies: ["HTML", "CSS", "JavaScript", "TailwindCSS"],
+    link: "https://m4-chat-8fjr6ictp-lakshya-sharmas-projects-6bea5a93.vercel.app/",
   },
 ];
 
@@ -46,11 +47,13 @@ const ProjectCard = ({ project }) => {
   return (
     <ScrollReveal>
       <div className="flex flex-col items-center gap-8 md:flex-row md:gap-24">
-        <img
-          src={project.image}
-          alt=""
-          className="w-full cursor-pointer rounded-2xl transition-all duration-300 hover:scale-105 md:w-[300px]"
-        />
+        <a href={project.link} target="_blank" rel="noopener noreferrer">
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full cursor-pointer rounded-2xl transition-all duration-300 hover:scale-105"
+          />
+        </a>
         <div className="flex flex-col gap-5">
           <div className="flex flex-col gap-3">
             <div className="text-xl font-semibold">{project.title}</div>
@@ -68,6 +71,7 @@ const ProjectCard = ({ project }) => {
     </ScrollReveal>
   );
 };
+
 const Projects = () => {
   return (
     <div
